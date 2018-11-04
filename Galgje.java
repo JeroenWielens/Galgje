@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Galgje {
 	
-	public static void guess (String woord, int levens) {
-		char[] filler= new char[woord.length()];
+	public static void guess (String woord, int levens) {				//de methode guess, neemt woord en levens mee uit de main
+		char[] filler= new char[woord.length()];						//filler om het woord te vullen met '-'
 		int i = 0;
 		while (i<woord.length()) {
 			filler[i]='-';
@@ -17,7 +17,7 @@ public class Galgje {
 			i++;
 		}
 		System.out.println(filler);
-		System.out.println("      levens over = " + levens);
+		System.out.println("            levens over = " + levens);
 		
 		Scanner s = new Scanner(System.in); 
 		
@@ -25,6 +25,7 @@ public class Galgje {
 		
 		while(levens>0) {
 			char x = s.next().charAt(0);  //character dat gebruiker invult
+			
 			
 			if(l.contains(x)) {
 				System.out.println("Deze letter is al gebruikt");
@@ -50,8 +51,9 @@ public class Galgje {
 				break;
 			}
 			
+			
 			System.out.println(filler);
-			System.out.println("      levens over = " + levens);
+			System.out.println("            levens over = " + levens);
 		}
 		
 		if(levens==0) {
@@ -65,7 +67,7 @@ public class Galgje {
 		String[] woorden = {"banaan", "tapijt", "computer", "chips", "telefoon", "ooievaar", "toetsenbord", "camera"}; //array met woorden
 		String woord = woorden[r.nextInt(woorden.length)];		//random woord genereren uit array met woorden. Dat woord wordt opgeslagen in 'woord'.
 		int levens = 10;										//aantal levens
-		guess(woord,levens);
+		guess(woord,levens);									//roept methode 'guess' aan met parameters woord en levens.
 	}
 }
 
